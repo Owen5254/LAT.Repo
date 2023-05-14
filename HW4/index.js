@@ -42,7 +42,7 @@ async function MS_TextSentimentAnalysis(thisEvent){
 
   const resultMessage = {
     type: 'text',
-    text: results[0].sentiment
+    text: results[0].sentiment + ' 信心分數:'+ results[0].confidenceScores[results[0].sentiment]
   };
   client.replyMessage(thisEvent.replyToken, resultMessage);
 }
